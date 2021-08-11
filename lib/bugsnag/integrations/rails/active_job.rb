@@ -35,6 +35,7 @@ module Bugsnag::Rails
 
           # if we have an integration for this queue adapter already then we should
           # leave this job alone or we'll end up with duplicate metadata
+          STDOUT.puts "SKW - EXISTING_INTEGRATIONS.include?(adapter): #{EXISTING_INTEGRATIONS.include?(adapter)}"
           return block.call if EXISTING_INTEGRATIONS.include?(adapter)
 
           Bugsnag.configuration.detected_app_type = 'active job'
