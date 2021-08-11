@@ -19,7 +19,8 @@ steps:
       docker-compose#v3.1.0:
         run: ruby-maze-runner
         use-aliases: true
-        command: ["features/rails_features/", "--tags", "@rails_integrations"]
+        command: ["features/rails_features/integrations.feature", "--tags", "@rails_integrations"]
     env:
+      DEBUG: "1"
       RUBY_TEST_VERSION: "2.7"
       RAILS_VERSION: "_integrations"
